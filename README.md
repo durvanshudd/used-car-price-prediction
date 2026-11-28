@@ -64,12 +64,6 @@ Test median absolute percentage error (MdAPE) is 0.249, close to the CV value of
 - Some odometer values look implausible (for example a 20-year-old car with about 1,000 km), and the dataset is small (about 3.5k rows), so the 716-car test set gives only a rough estimate of real-world accuracy.
 - `car_age` is computed against a fixed year (2026), so it needs to be recomputed if the data is reused later.
 
-## Next steps
-
-- Extract the **car model name** (for example Verna, Innova) as a feature, grouping rare models, since brand is too coarse for brands like Toyota.
-- Fix the brand extraction and group rare brands.
-- Compare tree-based models against this linear baseline using the same folds (planned as a separate project).
-
 ## Setup
 
 Python 3.12. Main libraries: `pandas`, `numpy`, `scikit-learn` (1.4 or newer, for `root_mean_squared_error`), `matplotlib`, `seaborn`, `jupyter`.
@@ -86,10 +80,10 @@ Place the raw CSV (`CAR DETAILS FROM CAR DEKHO.csv`) in the `Data/` folder, then
 
 ```
 .
-├── Data/
+├── data/
 │   ├── CAR DETAILS FROM CAR DEKHO.csv   # raw data
 │   └── car_data_cleaned.csv             # created by notebook 01
-├── Notebooks/
+├── notebooks/
 │   ├── 01_Data_Claning.ipynb
 │   ├── 02_EDA.ipynb
 │   ├── 03_Baseline_model.ipynb
